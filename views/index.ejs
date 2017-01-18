@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    
+    <% include ./partials/nav %>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <% if (user) { %>
+          <h1>Hey <%= user.username %> you are awesome!</h1>
+        <% } %>
+      </div>
+      <p>something something</p>
+    </div><!-- /.container -->
+
+  </body>
+</html>
