@@ -4,7 +4,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var oauth = require('oauth'); // this is for local test, oauth.js is .gitignored(we can't expose those vars) you need yours in local
+var oauth = require('./oauth'); // this is for local test, oauth.js is .gitignored(we can't expose those vars) you need yours in local
 
 // global config
 var app = express();
