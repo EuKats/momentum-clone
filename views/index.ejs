@@ -4,18 +4,50 @@
     <% include ./partials/head %>
   </head>
   <body>
-    
-    <% include ./partials/nav %>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <% if (user) { %>
-          <h1>Hey <%= user.username %> you are awesome!</h1>
-        <% } %>
+    <% if (!user) { %>
+      <form class = "loginuser" role="form" action="/login" method="post">
+          <div class="form-group">
+              <input class="form-control" type="text" name="username" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+              <input class="form-control" type="password" name="password" placeholder="Password">
+          </div>
+          <button class="btn btn-default" type="submit">Submit</button><a href="/">
+          <button class="btn btn-primary" type="button">cancel</button></a>
+      </form>
+    <% } else { %>
+      <div class="container text-center userexp">
+        <div class="starter-template">
+          <p class = "wel">Welcome, <%= user.username %></p>
+          <p class = "focus">What is your main focus for today?</p>
+        </div>
       </div>
-      <p>something something</p>
-    </div><!-- /.container -->
+        <i id = "togglemenu" class="fa fa-cog fa-2x" aria-hidden="true"></i>
+        <div id = "popupmenu">
+          <div class = "row">
+            <div class = "col-xs-3 leftside">
+              <p><strong>General</strong></p>
+              <p>Todo</p>
+              <p>Backgrounds</p>
+              <p>Quotes</p>
+              <br>
+              <h6>Help</h6>
+              <h6>What's new</h6>
+              <h6>About</h6>
+            </div>
+            <div class = "col-xs-9 rightside">
+              <% if (!user) { %>
+                  <button type = "button" class = "btn btn-default" id = "login"><a href="/login">Logint</a></button>
+              <% }else{ %>
+                  <button type = "button" class = "btn btn-default" id = "logout"><a href="/logout">Logout</a></button>
+              <% } %>
+            </div>
+          </div>
+        </div>
+    <% } %>
 
+    
   </body>
+
 </html>

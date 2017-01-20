@@ -1,3 +1,98 @@
 body {
+  background: url("https://s28.postimg.org/tqlxsoc4d/plouzane_1758197.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding-top: 50px;
+  color: white;
 }
+
+.hidden {
+  display: none;
+}
+
+.container {
+  width: 50%;
+  font-size: 60px;
+}
+
+.loginuser {
+  width: 600px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 250px;
+}
+
+.form-control {
+  background-color: transparent;
+  border-width: 0 0 5px 0;
+  font-size: 60px;
+  padding: 0;
+  height: 100px;
+  outline: none;
+  color: #eff3f4;
+}
+
+.form-control:focus{
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.input {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.form-control:focus {
+  outline: none;
+}
+
+.starter-template {
+  margin-top: 60%;
+  height: 280px;
+}
+
+.well {
+  font-size: 70px;
+  font-family: Arial;
+  
+}
+
+.focus {
+  font-size: 30px;
+  font-family: Arial;
+}
+
+#togglemenu {
+  position: absolute;
+  left: 20px;
+  top: 95%;
+  outline: none;
+}
+
+#popupmenu {
+  width: 690px;
+  height: 460px;
+  background-color: rgba(17, 9, 8, 0.89);
+  color: white;
+  text-size: 10px;
+  position: absolute;
+  left: 5px;
+  top: 44%;
+}
+
+.leftside {
+  padding: 30px 40px;
+}
+
+.rightside {
+  padding: 29px;
+  border-left: 2px solid rgba(74, 70, 69, 0.96);
+  text-decoration: none;
+}
+
