@@ -1,39 +1,42 @@
+/* General Style */
+
+/**, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}*/
+
+body, html {
+    height: 100%;
+}
+
 body {
-  background: url("https://s28.postimg.org/tqlxsoc4d/plouzane_1758197.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 50px;
-  color: white;
-}
-
-.hidden {
-  display: none;
-}
-
-.container {
-  width: 50%;
-  font-size: 60px;
+    background-image: url("https://source.unsplash.com/collection/523015/daily");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    color: white;
+    font-family: Roboto, sans-serif;
 }
 
 .loginuser {
   width: 600px;
-  text-align: center;
-  position: relative;
+  position: fixed;
   left: 50%;
   margin-left: -300px;
-  margin-top: 250px;
+  top: 45%;
 }
 
 .form-control {
   background-color: transparent;
   border-width: 0 0 5px 0;
-  font-size: 60px;
+  font-size: 50px;
   padding: 0;
   height: 100px;
   outline: none;
   color: #eff3f4;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .form-control:focus{
@@ -52,47 +55,148 @@ body {
   outline: none;
 }
 
-.starter-template {
-  margin-top: 60%;
-  height: 280px;
+.formtext {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 75px;
+  text-shadow: -1px 0 rgba(107, 107, 107, 1), 
+    0 1px rgba(107, 107, 107, 1), 
+    1px 0 rgba(107, 107, 107, 1), 
+    0 -1px rgba(107, 107, 107, 1);
 }
 
-.well {
-  font-size: 70px;
-  font-family: Arial;
-  
+.stayoutbtn {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 2px;
+  color:white;
+  margin-left: 10px;
 }
 
+.stayoutbtn:hover {
+  background-color: rgba(171, 171, 171, 0.69);
+  color:none;
+}
+
+.textofout{
+  float:left;
+  font-size: 20px;
+}
+
+.stayout {
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Sections style */
+
+/* Each section tag will be positioned fixed */
+section {
+    position: fixed;
+    color: rgba(242, 242, 242, 1);
+    text-shadow: -0.5px 0 rgba(107, 107, 107, 1), 
+    0 0.5px rgba(107, 107, 107, 1), 
+    0.5px 0 rgba(107, 107, 107, 1), 
+    0 -0.5px rgba(107, 107, 107, 1);
+}
+
+/* General positioning */
+.top {
+    top: 15px;
+}
+
+.middle {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.third-from-top {
+    top: 66%;
+}
+
+.bottom {
+    bottom: 15px;
+}
+
+.left {
+    left: 15px;
+}
+
+.center {
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.right {
+    right: 15px;
+}
+
+.middle.center {
+    transform: translate(-50%, -50%);
+}
+
+/* Middle section style */
+
+#time {
+    font-size: 160px;
+    line-height: 120px;
+}
+
+#greeting {
+    font-size: 60px;
+}
+
+/* Third from top section style */
+
+h3 {
+    font-size: 32px;
+}
+h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+/*rotates the button without js animation*/
+
+.rotate {
+    transform: rotate(180deg);
+    /*transform: rotate(180deg);*/
+    transition: .5s;
+}
+.rotate-reset {
+    transform: rotate(0deg);
+    transition: .5s;
+}
+
+/* Quote style */
+#quote {
+    color: #ddd;
+    font-style: italic;
+}
 .focus {
   font-size: 30px;
   font-family: Arial;
 }
 
-#togglemenu {
-  position: absolute;
-  left: 20px;
-  top: 95%;
-  outline: none;
-}
-
 #popupmenu {
   width: 690px;
   height: 460px;
-  background-color: rgba(17, 9, 8, 0.89);
-  color: white;
-  text-size: 10px;
-  position: absolute;
-  left: 5px;
-  top: 44%;
+  background-color: rgba(15, 15, 15, 0.8);
+  color: rgba(230, 230, 230, 1);
+  font-size: 15px;
+  position: fixed;
+  left: -690px;
+  top:  45%;
+  padding: 35px 20px;
 }
 
-.leftside {
-  padding: 30px 40px;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-
-.rightside {
-  padding: 29px;
-  border-left: 2px solid rgba(74, 70, 69, 0.96);
-  text-decoration: none;
-}
-
