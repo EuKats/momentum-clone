@@ -38,4 +38,6 @@ mongoose.connect(MONGO_DB);
 require('./routes/routes')(app);
 
 // run server
-app.listen(PORT);
+app.listen(PORT, function(){
+    console.log("Server running on port", PORT);
+});
