@@ -3,6 +3,7 @@ var express = require('express');
 //var routes = require('./routes');
 var mongoose = require('mongoose');
 var passport = require('passport');
+
 var LocalStrategy = require('passport-local').Strategy;
 //var oauth = require('./oauth'); // this is for local test, oauth.js is .gitignored(we can't expose those vars) you need yours in local
 
@@ -32,12 +33,16 @@ passport.deserializeUser(Account.deserializeUser());
 mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_DB);
 
+// app.use(function(req, res, next){
+//     res.locals.user = req.Account;
+//     next();
+// });
+
 // mongo model
 // var Model_Name = require('add_your_models_here');
 
 require('./routes/routes')(app);
 
 // run server
-app.listen(PORT, function(){
-    console.log("Server running on port", PORT);
-});
+
+app.listen(PORT);

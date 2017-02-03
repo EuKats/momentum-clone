@@ -4,18 +4,90 @@
     <% include ./partials/head %>
   </head>
   <body>
+    <% if (!user && !offline) { %>
+      <h1 class = "formtext">Login or Register</h1>
+      <form class = "loginuser" role="form" action="/registerorlogin" method="POST">
+          <div class="form-group">
+              <input class="form-control" type="text" name="username" placeholder="Username">
+          </div>
+          <div class="form-group">
+              <input class="form-control" type="password" name="password" placeholder="Password">
+          </div>
+          <button class="btn btn-default" type="submit" style="display:none;">Submit</button>
+      </form>
+      <form action="/stayout" method="POST" class="stayout">
+        <p class="textofout">Or would you rather stay logged out?</p>
+        <input type="submit" class="stayoutbtn btn" value="Stay logged out">
+      </form>
+    <% } else { %>
+      <section class="top left">
+          Links
+      </section>
+      <section class="top right">
+          Weather
+      </section>
+      <section class="bottom left">
+           <i class="fa fa-cog fa-2x rotate-reset" id="settings" aria-hidden="true"></i>
+      </section>
+      <section class="bottom right">
+          Todo
+      </section>
     
-    <% include ./partials/nav %>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <% if (user) { %>
-          <h1>Hey <%= user.username %> you are awesome!</h1>
+        <% if(user) { %>
+          <section class="middle center">
+            <h1 id="time">10:37</h1>
+            <h2 id="greeting">Good <span id="period"></span>, <%= user.username %>.</h2>
+          </section>
+        <% } else { %>
+          <% if(saveduser) { %>
+          <section class="middle center">
+            <h1 id="time">10:37</h1>
+            <h2 id="greeting">Good <span id="period"></span>, <%= saveduser %>.</h2>
+          </section>
+          <% } else { %>
+          <section class="middle center">
+            <h1 id="time">10:37</h1>
+            <h2 id="greeting">Good <span id="period"></span>.</h2>
+          </section>
+          <% } %>
         <% } %>
-      </div>
-      <p>something something</p>
-    </div><!-- /.container -->
 
+        <section class="third-from-top center">
+            <h3>What is your main focus for today?</h3>
+        </section>
+        <section class="bottom center">
+            <p id="quote">"Low self esteem is like driving through life with your hand-break on."</p>
+        </section>
+       
+        <div id="popupmenu">
+          <div class="row">
+            <div class="col-xs-3">
+              <ul class="leftside">
+                <li><p><strong>General</strong></p></li>
+                <li><p>Todo</p></li>
+                <li><p>Backgrounds</p></li>
+                <li><p>Quotes</p></li>
+                <br>
+                <li><h6>Help</h6></li>
+                <li><h6>What's new</h6></li>
+                <li><h6>About</h6></li>
+              </ul>
+            </div>
+            <div class = "col-xs-9 rightside">
+              <% if (!user) { %>
+                <form action="/login" method="POST">
+                  <input type="submit" class="btn btn-success" value="Login">
+                </form>
+              <% } else { %>
+                <button type = "button" class = "btn btn-default" id = "logout"><a href="/logout">Logout</a></button>
+              <% } %>
+            </div>
+          </div>
+        </div>
+    <% } %>
+
+    
   </body>
+
 </html>
