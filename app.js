@@ -3,14 +3,15 @@ var express = require('express');
 //var routes = require('./routes');
 var mongoose = require('mongoose');
 var passport = require('passport');
-var LocalStrategy = require('passport-local');
-var oauth = require('./oauth'); // this is for local test, oauth.js is .gitignored(we can't expose those vars) you need yours in local
+
+var LocalStrategy = require('passport-local').Strategy;
+//var oauth = require('./oauth'); // this is for local test, oauth.js is .gitignored(we can't expose those vars) you need yours in local
 
 // global config
 var app = express();
 var PORT = process.env.PORT || 3000;
-var MONGO_DB = process.env.MONGO_DB || oauth.MONGO_DB;
-var BEST_KEPT_SECRET = process.env.BEST_KEPT_SECRET || oauth.BEST_KEPT_SECRET;
+var MONGO_DB = process.env.MONGO_DB /*|| oauth.MONGO_DB*/;
+var BEST_KEPT_SECRET = process.env.BEST_KEPT_SECRET /*|| oauth.BEST_KEPT_SECRET*/;
 
 app.use('/assets', express.static(__dirname + '/assets'));
 app.set('views', __dirname + '/views');
@@ -43,6 +44,5 @@ mongoose.connect(MONGO_DB);
 require('./routes/routes')(app);
 
 // run server
-app.listen(PORT, function (){
-    console.log("server is running")
-});
+
+app.listen(PORT);
