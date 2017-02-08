@@ -11,6 +11,6 @@
 <li><b>/routes</b></li> contains our api, meaning what happens when you log in what value goes where, how to add stuff to the db and so on
 <li><b>/views</b></li> our html files, they are .ejs files but don't worry! it's just standard html code with some javascript inside `<% %>` : that's how we talk from <b>routes</b>(back end) to here(front end).
 <li><b>app.js</b></li> our core node file, everything starts from here, all the modules and the logic starts here.
-<li><b>script.js</b></li> This is the front end javascript file. We'll use it to make the weather and quotes api as well as some other front end components. 
+<li><b>jquery.js</b></li> This is the front end javascript file. We'll use it to make the weather and quotes api as well as some other front end components. 
 </ul>
 </p>
